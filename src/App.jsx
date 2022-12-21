@@ -7,16 +7,26 @@ const App = () => {
   const [currentAccount, setCurrentAccount] = useState("");
   const [allWaves, setAllWaves] = useState([]);
   const contractAddress = "0xdf366B8FB6553E6F5826Ee6195cb9330A34442c1";
+  const [message, setMessage] = useState("");
 
+
+  useEffect(() => {
+    console.log("running getAllWaves()")
+    getAllWaves();
+    }, [])
+    
   const getAllWaves = async () => {
     try {
+
       if (window.ethereum) {
-        const provider = new ethers.providers.Web3Provider
+        const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
         const wavePortalContract = new ethers.Contract(contractAddress, wavePortal.abi, signer);
 
         const waves = await wavePortalContract.getAllWaves();
-
+        console.log("hello 1 ");
+        console.log("get all waves contract",waves);
+        console.log("hello 2 ");
         let wavesCleaned = [];
         waves.forEach(wave => {
           wavesCleaned.push({
@@ -25,7 +35,7 @@ const App = () => {
             message: wave.message
           });
         });
-
+        console.log("wavescleaned", wavesCleaned);
         setAllWaves(wavesCleaned);
       } else {
         console.log("Ethereum object doesn't exist!")
@@ -92,10 +102,11 @@ const App = () => {
         let count = await wavePortalContract.getTotalWaves();
         console.log("Retrieved total wave count...", count.toNumber());
 
-        const waveTxn = await wavePortalContract.wave();
+        const waveTxn = await wavePortalContract.wave(message);
         console.log("Mining...", waveTxn.hash);
 
         await waveTxn.wait();
+        getAllWaves();
         console.log("Mined -- ", waveTxn.hash);
 
         count = await wavePortalContract.getTotalWaves();
@@ -122,7 +133,7 @@ const App = () => {
         <div className="bio">
           I am kamal and  I am excited to share this with you , Come wave at me by sharing your fav spotify links ? and get a chance to earn some ethers as reward !
         </div>
-        <input type="text" placeholder="Enter your message" className="box"/>
+        <input type="text" placeholder="Enter your message" className="box"  onChange={(e) => setMessage(e.target.value)} />
         <button className="waveButton" onClick={wave}>
           Wave at Me
         </button>
@@ -136,9 +147,11 @@ const App = () => {
           </button>
         )}
 
-
+        <h1>kamal</h1>
+        {console.log("all waves",allWaves)}
         {allWaves.map((wave, index) => {
           return (
+            
             <div key={index} style={{ backgroundColor: "OldLace", marginTop: "16px", padding: "8px" }}>
               <div>Address: {wave.address}</div>
               <div>Time: {wave.timestamp.toString()}</div>

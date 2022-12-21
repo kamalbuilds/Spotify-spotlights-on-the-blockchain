@@ -20,7 +20,7 @@
 
 .bio {
   text-align: center;
-  background-color: yellow;
+  background-color: whitesmoke;
   color: whitesmoke;
   margin-top: 16px;
   font-weight: 5px;
@@ -32,7 +32,7 @@
   cursor: pointer;
   margin-top: 36px;
   left: 200px;
-  padding: 8px;
+  padding: 20px;
   width: 6cm;
   align-items: center;
   border: 0;
@@ -45,10 +45,11 @@
 }
 
 .box{
-  width: 200px;
+  width: 600px;
   margin-top: 20px;
   align-content: center;
   justify-self: center;
   position: relative;
-  left: 200px;
+  top: 20px;
+  padding: 20px;
 }

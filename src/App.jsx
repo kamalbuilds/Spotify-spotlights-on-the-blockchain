@@ -6,7 +6,7 @@ import wavePortal from './utils/WavePortal.json';
 const App = () => {
   const [currentAccount, setCurrentAccount] = useState("");
   const [allWaves, setAllWaves] = useState([]);
-  const contractAddress = "0xd5f08a0ae197482FA808cE84E00E97d940dBD26E";
+  const contractAddress = "0xdf366B8FB6553E6F5826Ee6195cb9330A34442c1";
 
   const getAllWaves = async () => {
     try {
@@ -74,6 +74,7 @@ const App = () => {
 
       console.log("Connected", accounts[0]);
       setCurrentAccount(accounts[0]);
+    
     } catch (error) {
       console.log(error)
     }
@@ -119,7 +120,7 @@ const App = () => {
         </div>
 
         <div className="bio">
-          I am kamal and I this is my first Dapp and I am excited to share this with you , so that's pretty cool right? Connect your Ethereum wallet and wave at me!
+          I am kamal and  I am excited to share this with you , Come wave at me by sharing your fav spotify links ? and get a chance to earn some ethers as reward !
         </div>
         <input type="text" placeholder="Enter your message" className="box"/>
         <button className="waveButton" onClick={wave}>

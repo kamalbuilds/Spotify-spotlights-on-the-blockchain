@@ -127,7 +127,7 @@ const App = () => {
     <div className="mainContainer">
       <div className="dataContainer">
         <div className="header">
-        👋 Spotify Spotlights on the Blockchain !
+        🎤 Spotify Spotlights on the Blockchain !
         </div>
 
         <div className="bio">
@@ -152,7 +152,7 @@ const App = () => {
         {allWaves.map((wave, index) => {
           return (
             
-            <div key={index} style={{ backgroundColor: "yellow", marginTop: "16px", padding: "8px" }}>
+            <div key={index}  style={{ backgroundColor: "yellow", marginTop: "16px", padding: "20px" }}>
               <div>Address: {wave.address}</div>
               <div>Time: {wave.timestamp.toString()}</div>
               <div>Message: {wave.message}</div>

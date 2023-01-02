@@ -24,10 +24,11 @@ const App = () => {
         const wavePortalContract = new ethers.Contract(contractAddress, wavePortal.abi, signer);
 
         const waves = await wavePortalContract.getAllWaves();
-        console.log("hello 1 ");
+
         console.log("get all waves contract",waves);
-        console.log("hello 2 ");
+        
         let wavesCleaned = [];
+        // temp array for storing all the waves
         waves.forEach(wave => {
           wavesCleaned.push({
             address: wave.waver,

@@ -1,13 +1,29 @@
-## Running React on Repl.it
+<h1>Spotify spotlights on the blockchain</h1>
 
-[React](https://reactjs.org/) is a popular JavaScript library for building user interfaces.
+Welcome to the Spotify spotlights dapp, deployed on the Mumbai testnet!
 
-[Vite](https://vitejs.dev/) is a blazing fast frontend build tool that includes features like Hot Module Reloading (HMR), optimized builds, and TypeScript support out of the box.
+With this dapp, users can:
 
-Using the two in conjunction is one of the fastest ways to build a web app.
+* Wave at the app and send their favorite Spotify links
+* See all Spotify links submitted by other users in real-time, creating a collaborative playlist
+* This dapp utilizes the power of blockchain technology to create a decentralized platform for sharing music and connecting with others.
 
-### Getting Started
-- Hit run
-- Edit [App.jsx](#src/App.jsx) and watch it live update!
+To get started, head on over to the Dapp with Mumbai testnet account and give the Spotify Wave dapp a try!
 
-By default, Replit runs the `dev` script, but you can configure it by changing the `run` field in the `.replit` file.
+Features
+* Dynamic rendering of all Spotify links submitted by users
+* Collaborative playlist creation
+* Decentralized platform using blockchain technology
+* Rewards in Matic with a probability of 50%
+
+Technology Stack
+* React
+* Solidity
+* Redux
+* Contributing
+* Firebase
+
+If you want to contribute to the development of the Spotify spotlights dapp, please follow the guidelines in the CONTRIBUTING file.
+
+License
+This project is licensed under the MIT license.

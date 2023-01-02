@@ -6,7 +6,7 @@ import wavePortal from './utils/WavePortal.json';
 const App = () => {
   const [currentAccount, setCurrentAccount] = useState("");
   const [allWaves, setAllWaves] = useState([]);
-  const contractAddress = "0xdf366B8FB6553E6F5826Ee6195cb9330A34442c1";
+  const contractAddress = "0x212fc0Aa24F711211Ad7483CD7F2481ba42eD8c9";
   const [message, setMessage] = useState("");
 
 
